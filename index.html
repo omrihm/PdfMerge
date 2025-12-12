@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Merger - Internal Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>PDF Merger</h1>
+            <p>Combine multiple PDF documents into one file</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Drop Zone -->
+            <div class="drop-zone" id="dropZone">
+                <div class="drop-zone-content">
+                    <div class="drop-icon">📁</div>
+                    <p>Drag & drop your PDF files here, or click to choose files</p>
+                    <p class="small-text">Supports multiple files up to 100MB total</p>
+                </div>
+                <input type="file" id="fileInput" accept=".pdf" multiple style="display: none;">
+            </div>
+
+            <!-- File List -->
+            <div class="file-list-container" id="fileListContainer">
+                <div class="file-list-header">
+                    <h2>Selected Files</h2>
+                    <button id="clearAllBtn" class="btn btn-secondary">Clear All</button>
+                </div>
+                <div id="fileList" class="file-list"></div>
+            </div>
+
+            <!-- Output Settings -->
+            <div class="output-settings">
+                <label for="outputName">Output file name:</label>
+                <input type="text" id="outputName" value="merged.pdf">
+                <button id="mergeBtn" class="btn btn-primary">Merge PDFs</button>
+            </div>
+
+            <!-- Status Area -->
+            <div id="statusArea" class="status-area"></div>
+        </main>
+
+        <footer class="footer">
+            <p>Securely merges PDFs entirely in your browser - no files are uploaded to any server</p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
