@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://graceful-harbor-tcqs.here.now/sitemap.xml

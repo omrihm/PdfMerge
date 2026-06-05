@@ -3,51 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF Merger - Internal Tool</title>
+    <title>Free PDF Merger - Merge PDF Files in Your Browser</title>
+    <meta name="description" content="Merge multiple PDF files into one document directly in your browser. Fast, private, and free. No upload, no signup, no server-side processing.">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="canonical" href="https://graceful-harbor-tcqs.here.now/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Free PDF Merger - Merge PDF Files in Your Browser">
+    <meta property="og:description" content="Combine PDF files locally in your browser. Private by design, no uploads.">
+    <meta property="og:url" content="https://graceful-harbor-tcqs.here.now/">
+    <meta property="og:site_name" content="PDF Merger">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Free PDF Merger - Merge PDF Files in Your Browser">
+    <meta name="twitter:description" content="Merge PDF files locally with no upload.">
+
     <link rel="stylesheet" href="styles.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "PDF Merger",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "url": "https://graceful-harbor-tcqs.here.now/",
+      "description": "A privacy-first browser app to merge multiple PDF files into a single PDF.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Merge multiple PDFs",
+        "Drag and drop file ordering",
+        "No file upload",
+        "Runs entirely in browser"
+      ]
+    }
+    </script>
 </head>
 <body>
     <div class="container">
         <header class="header">
-            <h1>PDF Merger</h1>
-            <p>Combine multiple PDF documents into one file</p>
+            <p class="eyebrow">Private PDF Tools</p>
+            <h1>Merge PDF Files in Seconds</h1>
+            <p class="subtitle">Combine multiple PDF documents into one file directly in your browser.</p>
+
+            <div class="trust-badges" aria-label="Trust and privacy highlights">
+                <span>✅ No upload</span>
+                <span>✅ No account</span>
+                <span>✅ Runs locally</span>
+            </div>
         </header>
 
         <main class="main-content">
-            <!-- Drop Zone -->
-            <div class="drop-zone" id="dropZone">
+            <section class="steps" aria-label="How it works">
+                <div class="step"><strong>1.</strong> Upload PDFs</div>
+                <div class="step"><strong>2.</strong> Reorder files</div>
+                <div class="step"><strong>3.</strong> Merge & download</div>
+            </section>
+
+            <section class="drop-zone" id="dropZone" role="button" tabindex="0" aria-label="Upload PDF files">
                 <div class="drop-zone-content">
-                    <div class="drop-icon">📁</div>
-                    <p>Drag & drop your PDF files here, or click to choose files</p>
+                    <div class="drop-icon" aria-hidden="true">📄</div>
+                    <p>Drag & drop PDF files here</p>
+                    <button type="button" id="chooseFilesBtn" class="btn btn-secondary">Choose PDF files</button>
                     <p class="small-text">Supports multiple files up to 100MB total</p>
                 </div>
-                <input type="file" id="fileInput" accept=".pdf" multiple style="display: none;">
-            </div>
+                <input type="file" id="fileInput" accept=".pdf,application/pdf" multiple hidden>
+            </section>
 
-            <!-- File List -->
-            <div class="file-list-container" id="fileListContainer">
+            <section class="file-list-container" id="fileListContainer" aria-label="Selected files">
                 <div class="file-list-header">
                     <h2>Selected Files</h2>
-                    <button id="clearAllBtn" class="btn btn-secondary">Clear All</button>
+                    <button type="button" id="clearAllBtn" class="btn btn-secondary">Clear All</button>
                 </div>
-                <div id="fileList" class="file-list"></div>
-            </div>
+                <div id="fileList" class="file-list">
+                    <p id="emptyState" class="empty-state">No files selected yet.</p>
+                </div>
+            </section>
 
-            <!-- Output Settings -->
-            <div class="output-settings">
-                <label for="outputName">Output file name:</label>
-                <input type="text" id="outputName" value="merged.pdf">
-                <button id="mergeBtn" class="btn btn-primary">Merge PDFs</button>
-            </div>
+            <section class="output-settings" aria-label="Output settings">
+                <label for="outputName">Output filename</label>
+                <input type="text" id="outputName" value="merged.pdf" inputmode="text" autocomplete="off">
+                <button type="button" id="mergeBtn" class="btn btn-primary" disabled>Merge PDFs</button>
+            </section>
 
-            <!-- Status Area -->
-            <div id="statusArea" class="status-area"></div>
+            <div id="statusArea" class="status-area" role="status" aria-live="polite"></div>
         </main>
 
+        <section class="seo-content" aria-label="About this tool">
+            <h2>About this PDF merger</h2>
+            <p>This tool merges PDF files directly in your browser using JavaScript. Your files stay on your device and are never uploaded to a remote server.</p>
+
+            <h3>Frequently asked questions</h3>
+            <ul>
+                <li><strong>Is it free?</strong> Yes, this PDF merger is free to use.</li>
+                <li><strong>Are my files uploaded?</strong> No. Processing is local in your browser.</li>
+                <li><strong>Can I reorder files before merging?</strong> Yes. Drag files in the list to set order.</li>
+            </ul>
+        </section>
+
         <footer class="footer">
-            <p>Securely merges PDFs entirely in your browser - no files are uploaded to any server</p>
+            <p>Built for privacy-first PDF workflows.</p>
+            <p><a href="https://github.com/omrihm/PdfMerge" target="_blank" rel="noopener noreferrer">View source on GitHub</a></p>
         </footer>
     </div>
+
+    <noscript>
+        <p class="noscript">This app requires JavaScript enabled in your browser to merge PDF files.</p>
+    </noscript>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
     <script src="app.js"></script>

@@ -1,0 +1,14 @@
+# PDF Merger
+
+> Privacy-first, browser-based PDF merge tool.
+
+## What this site offers
+- Merge multiple PDF files into one document directly in browser
+- Reorder files before merging
+- No server upload, no account required
+
+## Canonical URL
+- https://graceful-harbor-tcqs.here.now/
+
+## Source
+- https://github.com/omrihm/PdfMerge
